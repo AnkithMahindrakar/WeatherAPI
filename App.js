@@ -1,4 +1,4 @@
-//import liraries
+//import liraries npx react-native run-android
 import React, {useState, useEffect} from 'react';
 import {
   View,
@@ -62,10 +62,10 @@ const App = () => {
     return () => FetchUser();
   }, []);
 
-  const getWeather = async () => {
+  const getWeather = async placeArg => {
     try {
       const response = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${place}&appid=83135973192e8f18f130b562e55333c0`,
+        `https://api.openweathermap.org/data/2.5/weather?q=${placeArg}&appid=83135973192e8f18f130b562e55333c0`,
       );
       // console.log('2', response);
       const json = await response.json();
@@ -122,7 +122,7 @@ const App = () => {
         <TouchableOpacity
           style={styles.button}
           onPress={() => {
-            getWeather();
+            getWeather(place);
             setLoading(true);
             setClick(false);
 
