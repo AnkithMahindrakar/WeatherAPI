@@ -8,7 +8,6 @@ import {
   StyleSheet,
   ActivityIndicator,
   FlatList,
-  Dimensions,
 } from 'react-native';
 import firestore from '@react-native-firebase/firestore';
 
@@ -109,7 +108,7 @@ const App = () => {
       <Text style={styles.flatlistTxt1}>Just a Weather App</Text>
       <TextInput
         style={styles.input}
-        placeholder="Enter city name"
+        placeholder="Enter city"
         placeholderTextColor="#aaaaaa"
         value={place}
         // onChangeText={content => setCity1(content)}
